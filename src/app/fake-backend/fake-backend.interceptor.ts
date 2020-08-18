@@ -43,7 +43,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
 
     function readData() {
-      return ok();
+      return ok(todos);
     }
 
     function readDataById() {
