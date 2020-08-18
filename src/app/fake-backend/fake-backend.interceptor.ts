@@ -43,7 +43,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
 
     function readData() {
-      return ok(todos);
+      return ok(todos.sort((a, b) => (a.date > b.date) ? 1 : -1));
     }
 
     function readDataById() {
