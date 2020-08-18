@@ -14,7 +14,7 @@
     <td>
       <button class="orange" [routerLink]="['/edit', todo.id]">
         Szerkesztés</button
-      ><button class="red" (click)="onClickMe(todo.id)">Törlés</button>
+      ><button class="red" (click)="deleteById(todo.id)">Törlés</button>
     </td>
   </tr>
 </table>

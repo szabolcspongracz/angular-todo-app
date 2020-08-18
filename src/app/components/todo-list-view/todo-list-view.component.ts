@@ -26,7 +26,7 @@ export class TodoListViewComponent implements OnInit {
     });
   }
 
-  onClickMe(id) {
+  deleteById(id) {
     this.todoService.deleteTodo(id).subscribe();
   }
 }
