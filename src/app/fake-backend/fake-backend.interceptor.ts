@@ -28,11 +28,11 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     function handleRoute() {
       switch (true) {
         case url.endsWith("/api/todos") && method === "GET":
-          return getData();
+          return readData();
         case url.match("/api/edit/*") && method === "GET":
-          return getDataById();
+          return readDataById();
         case url.endsWith("/api/todos") && method === "POST":
-          return postData();
+          return createData();
         case url.endsWith("/api/todos") && method === "PUT":
           return updateData();
         case url.match("/api/delete/*") && method === "DELETE":
@@ -42,16 +42,16 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       }
     }
 
-    function getData() {
+    function readData() {
       return ok(todos);
     }
 
-    function getDataById() {
+    function readDataById() {
       let todo = todos.filter((todo) => todo.id === idFromUrl());
       return ok(todo);
     }
 
-    function postData() {
+    function createData() {
       body.id = todos.length;
       todos.push(body);
       localStorage.setItem("todos", JSON.stringify(todos));
