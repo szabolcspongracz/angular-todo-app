@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
 })
 export class NewTodoFormComponent implements OnInit {
   formData = {
-    id: "",
+    id: null,
     description: "",
     category: "",
     date: "",

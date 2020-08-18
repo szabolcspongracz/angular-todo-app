@@ -12,7 +12,7 @@ export class EditTodoFormComponent implements OnInit {
   public todoDescription = "";
   public todoCategory = "";
   public todoDate = "";
-  public id = "";
+  public id = null;
   public todo = {};
 
   constructor(
