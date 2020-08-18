@@ -1,0 +1,17 @@
+<h1>TODO</h1>
+
+<table class="todo-table" *ngIf='todos'>
+  <tr>
+    <th>Leírás</th>
+    <th>Kategória</th>
+    <th>Dátum</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let todo of todos">
+    <td>{{todo.description}}</td>
+    <td>{{todo.category}}</td>
+    <td>{{todo.date}}</td>
+    <td><button class="orange" [routerLink]="['/edit', todo.id]" >Szerkesztés</button><button class="red" (click)="onClickMe(todo.id)">Törlés</button></td>
+  </tr>
+</table>
+<button [routerLink]="['/new']">Új hozzáadása</button>

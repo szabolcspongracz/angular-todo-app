@@ -1,0 +1,110 @@
+/* COLORS - COLORIZE */
+:root {
+  --mygreen: rgb(94, 184, 102);
+  --myblue: rgb(5,158,197);
+  --mygrey: rgb(245,245,245);
+  --myorange: rgb(255,178,40);
+  --myred: rgb(246,92,75);
+}
+
+.red {
+  background-color: var(--myred);
+}
+
+.orange {
+  background-color: var(--myorange);
+}
+
+.green {
+  background-color: var(--mygreen);
+}
+
+/* MAIN */
+body {
+  font-family: sans;
+  background-color: var(--mygrey);
+  padding: 0;
+}
+
+.container {
+  padding: 5%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: sans;
+}
+
+/* TABLES */
+.todo-table {
+  font-family: sans-serif;
+  border: 1px solid darkgray;
+  border-collapse: collapse;
+  padding: 0;
+  width: 100%;
+}
+
+.todo-table th{
+  font-family: arial;
+  text-align: left;
+  color: white;
+  background-color: var(--mygreen);
+  padding: 8px 10px 8px 1px;
+}
+
+.todo-table td{
+  padding: 8px 5px;
+}
+
+.todo-table td, tr{
+  border: 1px solid darkgrey;
+}
+
+.todo-table tr:nth-child(even){
+  background-color: white;
+}
+
+/* BUTTONS */
+button {
+  font-family: sans;
+  font-weight: bold;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  margin: 10px 0;
+  background-color: var(--myblue); 
+}
+
+tr button {
+  font-family: sans-serif;
+  margin: 3px 10px;
+}
+
+/* FORMS */
+label {
+  width: 100%;
+  display: block;
+  padding: 10px 0;
+}
+
+form input {
+  width: 100%;
+  height: 1.8rem;
+}
+
+form button{
+  display: block; 
+}
+
+/* ERRORS */
+.error {
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  margin-top: 5px;
+  width: 100%;
+  background-color: var(--myred);
+  padding: 10px 5px;
+}
