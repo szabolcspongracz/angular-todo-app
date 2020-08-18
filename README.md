@@ -12,9 +12,7 @@ Simple ToDo app: You can create, edit, and delete todos
 
 ### Run the project locally
 
-git clone 
-
-https://github.com/szabolcspongracz/angular-todo-app.git
+git clone https://github.com/szabolcspongracz/angular-todo-app.git
 
 ng update @angular/cli @angular/core --allow-dirty --force
 
