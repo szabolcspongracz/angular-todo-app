@@ -21,12 +21,9 @@ export class NewTodoFormComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit(form) {
-    console.log("in onSubmit", form.valid);
     if (form.valid === true) {
       this.todoService.addTodo(this.formData).subscribe();
       this.router.navigate(["/todos"]);
-    } else {
-      console.log("non valid form!!");
-    }
+    } 
   }
 }

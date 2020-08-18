@@ -25,7 +25,6 @@ export class EditTodoFormComponent implements OnInit {
     let id = +this.route.snapshot.paramMap.get("id");
     this.todoService.getTodoById(id).subscribe({
       next: (todo) => {
-        console.log("todoById: ", todo[0]);
         this.id = todo[0].id;
         this.todoDescription = todo[0].description;
         this.todoCategory = todo[0].category;
@@ -44,8 +43,6 @@ export class EditTodoFormComponent implements OnInit {
     if (form.valid === true) {
       this.todoService.updateTodo(updatedTodo).subscribe();
       this.router.navigate(["/todos"]);
-    } else {
-      console.log("non valid form!!");
     }
   }
 }

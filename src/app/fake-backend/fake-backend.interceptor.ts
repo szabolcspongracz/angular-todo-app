@@ -43,7 +43,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
 
     function getData() {
-      //console.log(getSmallestFreeId());
       return ok(todos);
     }
 
@@ -53,7 +52,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
 
     function postData() {
-      body.id = todos.length; //getSmallestFreeId();
+      body.id = todos.length;
       todos.push(body);
       localStorage.setItem("todos", JSON.stringify(todos));
       return ok();
@@ -72,7 +71,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       let id = idFromUrl();
       let filteredTodos = todos.filter((element) => element.id !== id);
       localStorage.setItem("todos", JSON.stringify(filteredTodos));
-      console.log("something deleted...");
       return ok();
     }
 
@@ -82,7 +80,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
 
     function idFromReqBody() {
-      console.log("body: ", body);
       return parseInt(body);
     }
 

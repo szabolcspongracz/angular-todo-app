@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpErrorResponse } from '@angular/common/http'
-import { Observable, throwError } from 'rxjs'
-import { catchError, tap } from 'rxjs/operators'
-import { Todo } from '../../data/todo'
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+import { Todo } from '../../data/todo';
 
 @Injectable({
   providedIn: 'root'
@@ -39,7 +39,7 @@ export class TodoService {
   deleteTodo(todoId : number) {
     return this.http.delete(`./api/delete/${todoId}`).pipe(
       catchError(this.handleError)
-    );;
+    );
   }
 
   handleError(err : HttpErrorResponse) {
