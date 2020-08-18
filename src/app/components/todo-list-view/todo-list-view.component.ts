@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
-import { TodoService } from '../../services/todo-service/todo.service';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs";
+import { tap } from "rxjs/operators";
+import { TodoService } from "../../services/todo-service/todo.service";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'todo-list-view',
-  templateUrl: './todo-list-view.component.html',
-  styleUrls: ['./todo-list-view.component.css']
+  selector: "todo-list-view",
+  templateUrl: "./todo-list-view.component.html",
+  styleUrls: ["./todo-list-view.component.css"],
 })
 export class TodoListViewComponent implements OnInit {
   public todos;
 
-  constructor(private todoService : TodoService, private router : Router) { }
+  constructor(private todoService: TodoService, private router: Router) {}
 
   ngOnInit() {
     this.refreshTodos();
@@ -20,14 +20,14 @@ export class TodoListViewComponent implements OnInit {
 
   refreshTodos() {
     this.todoService.getTodos().subscribe({
-      next: todos => {
+      next: (todos) => {
         this.todos = todos;
-        }
+      },
     });
   }
 
   onClickMe(id) {
-    console.log('button clicked, id: ', id);
+    console.log("button clicked, id: ", id);
     this.todoService.deleteTodo(id).subscribe();
   }
 }

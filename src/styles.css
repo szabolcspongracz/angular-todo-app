@@ -1,10 +1,10 @@
 /* COLORS - COLORIZE */
 :root {
   --mygreen: rgb(94, 184, 102);
-  --myblue: rgb(5,158,197);
-  --mygrey: rgb(245,245,245);
-  --myorange: rgb(255,178,40);
-  --myred: rgb(246,92,75);
+  --myblue: rgb(5, 158, 197);
+  --mygrey: rgb(245, 245, 245);
+  --myorange: rgb(255, 178, 40);
+  --myred: rgb(246, 92, 75);
 }
 
 .red {
@@ -46,7 +46,7 @@ h1 {
   width: 100%;
 }
 
-.todo-table th{
+.todo-table th {
   font-family: arial;
   text-align: left;
   color: white;
@@ -54,15 +54,16 @@ h1 {
   padding: 8px 10px 8px 1px;
 }
 
-.todo-table td{
+.todo-table td {
   padding: 8px 5px;
 }
 
-.todo-table td, tr{
+.todo-table td,
+tr {
   border: 1px solid darkgrey;
 }
 
-.todo-table tr:nth-child(even){
+.todo-table tr:nth-child(even) {
   background-color: white;
 }
 
@@ -74,7 +75,7 @@ button {
   color: white;
   padding: 10px 15px;
   margin: 10px 0;
-  background-color: var(--myblue); 
+  background-color: var(--myblue);
 }
 
 tr button {
@@ -94,8 +95,8 @@ form input {
   height: 1.8rem;
 }
 
-form button{
-  display: block; 
+form button {
+  display: block;
 }
 
 /* ERRORS */

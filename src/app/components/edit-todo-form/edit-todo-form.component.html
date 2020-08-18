@@ -1,21 +1,59 @@
 <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-  <h1>Szerkesztés: {{todoDescription}}</h1>
+  <h1>Szerkesztés: {{ todoDescription }}</h1>
 
   <label>Leírás</label>
-  <input for="new" type="text" placeholder='Leírás' name="description" [(ngModel)]="todoDescription" required #descriptionField="ngModel">
-  <div [hidden]="descriptionField.valid || descriptionField.untouched && !form.submitted" class="error">
+  <input
+    for="new"
+    type="text"
+    placeholder="Leírás"
+    name="description"
+    [(ngModel)]="todoDescription"
+    required
+    #descriptionField="ngModel"
+  />
+  <div
+    [hidden]="
+      descriptionField.valid || (descriptionField.untouched && !form.submitted)
+    "
+    class="error"
+  >
     Leírás megadása kötelező
   </div>
 
   <label>Kategória</label>
-  <input for="category" type="text" placeholder="Kategória" name="category" [(ngModel)]="todoCategory" required maxlength="50" #categoryField="ngModel">
-  <div [hidden]="categoryField.valid || categoryField.untouched && !form.submitted" class="error">
-    Kategória megadása kötelező  (maximum 50 karakter)
+  <input
+    for="category"
+    type="text"
+    placeholder="Kategória"
+    name="category"
+    [(ngModel)]="todoCategory"
+    required
+    maxlength="50"
+    #categoryField="ngModel"
+  />
+  <div
+    [hidden]="
+      categoryField.valid || (categoryField.untouched && !form.submitted)
+    "
+    class="error"
+  >
+    Kategória megadása kötelező (maximum 50 karakter)
   </div>
 
   <label>Dátum</label>
-  <input for="date" type="date" placeholder="2020. 08. 22" name="date" [(ngModel)]="todoDate" required #dateField="ngModel">
-  <div [hidden]="dateField.valid || dateField.untouched && !form.submitted" class="error">
+  <input
+    for="date"
+    type="date"
+    placeholder="2020. 08. 22"
+    name="date"
+    [(ngModel)]="todoDate"
+    required
+    #dateField="ngModel"
+  />
+  <div
+    [hidden]="dateField.valid || (dateField.untouched && !form.submitted)"
+    class="error"
+  >
     Dátum megadása kötelező
   </div>
 
