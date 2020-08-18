@@ -43,7 +43,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
 
     function readData() {
-      return ok(todos);
+      return ok();
     }
 
     function readDataById() {
@@ -52,7 +52,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
 
     function createData() {
-      body.id = todos.length;
+      body.id = getSmallestFreeId();
       todos.push(body);
       localStorage.setItem("todos", JSON.stringify(todos));
       return ok();
@@ -91,7 +91,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         let filteredTodos = todos.filter((element) => element.id === id);
         if (filteredTodos && filteredTodos.length) {
           id += 1;
-          return id;
         } else {
           return id;
         }

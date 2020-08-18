@@ -28,5 +28,6 @@ export class TodoListViewComponent implements OnInit {
 
   deleteById(id) {
     this.todoService.deleteTodo(id).subscribe();
+    location.reload();
   }
 }
